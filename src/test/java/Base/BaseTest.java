@@ -24,7 +24,11 @@ public class BaseTest {
     public CheckoutPage checkoutPage;
     public CheckOutStepTwoPage checkOutStepTwoPage;
     public CheckOutCompletePage checkOutCompletePage;
-
+    public String checkOutPageURL="https://www.saucedemo.com/checkout-step-one.html";
+    public String cartPageURL="https://www.saucedemo.com/cart.html";
+    public String homePageUrl="https://www.saucedemo.com/inventory.html";
+    public String checkOutStepTwoPageURL="https://www.saucedemo.com/checkout-step-two.html";
+    public String checkOutCompletePageURL ="https://www.saucedemo.com/checkout-complete.html";
 
     @BeforeClass
     public void setUp() {
@@ -51,11 +55,21 @@ public class BaseTest {
         wait.until(ExpectedConditions.visibilityOf(element));
 
     }
+    public void testUserLogIn() {
+        logInPage.inputUserName("standard_user");
+        logInPage.inputPassword("secret_sauce");
+        logInPage.clickOnLogInButton();
+    }
 
+    public void userInputforCheckOut(){
+        checkoutPage.inputFirstName("Bobana");
+        checkoutPage.inputLastName("Simikic");
+        checkoutPage.inputPostCode("22000");
+        checkoutPage.clickContinue();
+    }
     public boolean elementDisplayed(WebElement element) {
      return   element.isDisplayed();
     }
-
     @AfterClass
     public void theEndOfAllTest(){
         driver.quit();

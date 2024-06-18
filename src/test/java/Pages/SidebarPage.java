@@ -14,7 +14,7 @@ public class SidebarPage extends BaseTest {
     }
     @FindBy(id = "react-burger-menu-btn")
     public WebElement sideBarButton;
-    @FindBy(className = "bm-item menu-item")
+    @FindBy(className = "bm-item")
     public List<WebElement>sideBarManu;
     @FindBy(id="react-burger-cross-btn")
     public WebElement closeSideBarButton;
@@ -27,12 +27,10 @@ public class SidebarPage extends BaseTest {
         sideBarButton.click();
     }
     public void closeSideBar(){
-        openSideBar();
         closeSideBarButton.click();
     }
 
     public void clickOnSideBarItem(String option) {
-        waitForElementVisibility(sideBarManu.get(0));
         for(WebElement opcija : sideBarManu) {
             if(opcija.getText().equals(option)) {
                 opcija.click();
