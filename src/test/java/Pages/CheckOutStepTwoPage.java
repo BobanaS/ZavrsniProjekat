@@ -18,7 +18,10 @@ public class CheckOutStepTwoPage extends BaseTest {
     public WebElement product;
     @FindBy(className = "inventory_item_price")
     public WebElement productprice;
-
+    @FindBy (className = "summary_tax_label")
+    public WebElement tax;
+    @FindBy (className = "summary_total_label")
+    public WebElement totalPrice;
     //-----------------------
 
 
@@ -36,5 +39,19 @@ public class CheckOutStepTwoPage extends BaseTest {
     }
     public void clickOnFinishButton(){
         finishButton.click();
+    }
+    public boolean isTheTrueTotalPriceWhenYouAddTax(){
+        String priceText = productprice.getText().replace("$", "");
+        String taxText=tax.getText().replace("Tax: $", "");
+        String totalText=totalPrice.getText().replace("Total: $", "");
+        double productp = Double.parseDouble(priceText);
+        double taxx=Double.parseDouble(taxText);
+        double totaly=Double.parseDouble(totalText);
+        if(totaly==(productp+taxx)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

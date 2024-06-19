@@ -1,17 +1,32 @@
 package Tests;
 
 import Base.BaseTest;
+import Pages.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class LogInPageTests extends BaseTest {
     @BeforeMethod
     public void pageSetUp() {
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        homePage = new HomePage();
+        sidebarPage = new SidebarPage();
+        logInPage = new LogInPage();
+        socialNetworkPage = new SocialNetworkPage();
+        cartPage = new CartPage();
+        checkoutPage = new CheckoutPage();
+        checkOutStepTwoPage = new CheckOutStepTwoPage();
+        checkOutCompletePage = new CheckOutCompletePage();
+        productPage=new ProductPage();
     }
 
     @Test(priority = 10)
@@ -106,7 +121,7 @@ public class LogInPageTests extends BaseTest {
         Assert.assertTrue(sidebarPage.sideBarButtonIsDisplayed());
         Assert.assertTrue(cartPage.cartIconIsDisplayed());
     }
-    @Test(priority = 60)
+    @Test(priority = 110)
     public void visualUserTryLogIn() {
         logInPage.inputUserName("visual_user");
         logInPage.inputPassword("secret_sauce");
@@ -120,5 +135,6 @@ public class LogInPageTests extends BaseTest {
     @AfterMethod
     public void theEndOfTest(){
         driver.manage().deleteAllCookies();
-    }
+        driver.close();
+        }
 }

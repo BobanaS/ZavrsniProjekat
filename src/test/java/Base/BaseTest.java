@@ -24,27 +24,20 @@ public class BaseTest {
     public CheckoutPage checkoutPage;
     public CheckOutStepTwoPage checkOutStepTwoPage;
     public CheckOutCompletePage checkOutCompletePage;
-    public String checkOutPageURL="https://www.saucedemo.com/checkout-step-one.html";
-    public String cartPageURL="https://www.saucedemo.com/cart.html";
-    public String homePageUrl="https://www.saucedemo.com/inventory.html";
-    public String checkOutStepTwoPageURL="https://www.saucedemo.com/checkout-step-two.html";
-    public String checkOutCompletePageURL ="https://www.saucedemo.com/checkout-complete.html";
-
+    public ProductPage productPage;
+    public String checkOutPageURL = "https://www.saucedemo.com/checkout-step-one.html";
+    public String cartPageURL = "https://www.saucedemo.com/cart.html";
+    public String homePageUrl = "https://www.saucedemo.com/inventory.html";
+    public String checkOutStepTwoPageURL = "https://www.saucedemo.com/checkout-step-two.html";
+    public String checkOutCompletePageURL = "https://www.saucedemo.com/checkout-complete.html";
+    public String sauceLabsOnecieURL="https://www.saucedemo.com/inventory-item.html?id=2";
+    public String productForProductPageTest="Sauce Labs Backpack";
+    public String productForProductPageTestURL="https://www.saucedemo.com/inventory-item.html?id=4";
     @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        homePage = new HomePage();
-        sidebarPage = new SidebarPage();
-        logInPage = new LogInPage();
-        socialNetworkPage = new SocialNetworkPage();
-        cartPage = new CartPage();
-        checkoutPage = new CheckoutPage();
-        checkOutStepTwoPage = new CheckOutStepTwoPage();
-        checkOutCompletePage = new CheckOutCompletePage();
-    }
 
+    }
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("", element);
@@ -70,7 +63,7 @@ public class BaseTest {
     public boolean elementDisplayed(WebElement element) {
      return   element.isDisplayed();
     }
-    @AfterClass
+   @AfterClass
     public void theEndOfAllTest(){
         driver.quit();
     }

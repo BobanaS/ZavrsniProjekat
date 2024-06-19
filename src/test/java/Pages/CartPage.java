@@ -27,7 +27,7 @@ public class CartPage extends BaseTest {
     public WebElement productName;
     @FindBy(className = "inventory_item_price")
     public WebElement productPrice;
-    @FindBy(id = "remove-sauce-labs-bike-light")
+    @FindBy(id = "remove-sauce-labs-backpack")
     public WebElement removeButton;
 
     //------------------------------------------------
