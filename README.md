@@ -77,6 +77,7 @@ Pages: Package containing Java classes for each page of the web application (e.g
 Tests: Package containing TestNG test classes for testing application functionalities (e.g., CartTests.java, CheckOutStepTwoTest.java), covering test steps and assertions.
 
 ##Contact Information
+
 LinkedIn: Bobana Simikic / www.linkedin.com/in/bobana-simikic160719918
 
 Email: bobana.simikic@gmail.com
