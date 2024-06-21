@@ -118,25 +118,7 @@ public class LogInPageTests extends BaseTest {
         Assert.assertTrue(sidebarPage.sideBarButtonIsDisplayed());
         Assert.assertTrue(cartPage.cartIconIsDisplayed());
     }
-    /*
-      Test case to verify login attempt with valid credentials for locked out user.
-      Enters valid username and password, clicks on the login button,
-      and asserts the current URL and visibility of side bar and cart icon.
-     */
-    /*@Test(priority = 70)
-    public void lockedOutUserTryLogIn() {
-        logInPage.inputUserName("locked_out_user");
-        logInPage.inputPassword("secret_sauce");
-        logInPage.clickOnLogInButton();
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory.html");
-        Assert.assertTrue(sidebarPage.sideBarButtonIsDisplayed());
-        Assert.assertTrue(cartPage.cartIconIsDisplayed());
-    }*/
-    /*
-      Test case to verify login attempt with valid credentials for problem user.
-      Enters valid username and password, clicks on the login button,
-       and asserts the current URL and visibility of side bar and cart icon.
-     */
+
 
     @Test(priority = 80)
     public void problemUserTryLogIn() {

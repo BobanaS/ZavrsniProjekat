@@ -60,7 +60,7 @@ public class BaseTest {
      */
     public void scrollToElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("", element);
+        js.executeScript("arguments[0].scrollIntoView();", element);
     }
     /*
       Waits for the specified web element to become visible on the page.
