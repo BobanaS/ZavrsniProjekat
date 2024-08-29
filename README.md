@@ -4,7 +4,7 @@
 Automated Testing of Web Application using Selenium WebDriver and TestNG
 
 ##Brief Description: 
-This project involves automating tests for the web application https://www.saucedemo.com/ using Selenium WebDriver and TestNG. Various functionalities of the application were tested, including user login, adding products to cart, and completing the checkout process.
+This project involves automating tests for the web application https://www.saucedemo.com/ using Selenium WebDriver and TestNG. Various functionalities of the application were tested, including user login, adding products to cart, and completing the checkout process. Here is also an Excel file with 140 test cases written for for the web application.
 
 ##Technologies and Tools
 Selenium WebDriver: Used for interacting with web elements and executing tests.
